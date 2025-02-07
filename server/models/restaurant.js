@@ -1,13 +1,10 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 const restaurantSchema = new mongoose.Schema({
     name: String,
-    localation: String,
+    location: String,
     cuisine: String,
-    available_slots: [String],
-    reviws: [
-        {
-            user: {type: mongoose.Schema.Types.ObjectId, ref:"User"}
-        }
-    ]
+    availableSlots: [ Date],
 })
+
+module.exports = mongoose.model("Restaurant", restaurantSchema)
